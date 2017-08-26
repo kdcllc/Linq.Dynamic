@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <AssemblyName>System.Linq.Dynamic</AssemblyName>
+    <RootNamespace>System.Linq.Dynamic</RootNamespace>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>System.Linq.Dynamic Library for .NET Core</Title>
+    <PackageId>Microsoft.Linq.Dynamic</PackageId>
+    <PackageTags>dynamicquery;aspnetcore;netstandard</PackageTags>
+    <PackageProjectUrl>https://github.com/kdcllc/Linq.Dynamic</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/kdcllc/Linq.Dynamic</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/kdcllc/Linq.Dynamic/blob/master/LICENSE.md</PackageLicenseUrl>
+    <copyright>Copyright 2008-2017 Microsoft</copyright>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
