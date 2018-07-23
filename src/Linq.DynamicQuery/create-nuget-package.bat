@@ -1,1 +1,0 @@
-dotnet pack Linq.Dynamic.csproj --configuration  Release
