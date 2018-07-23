@@ -15,9 +15,6 @@
     <PackageLicenseUrl>https://github.com/kdcllc/Linq.Dynamic/blob/master/LICENSE.md</PackageLicenseUrl>
 		<PackageIconUrl>https://raw.githubusercontent.com/kdcllc/Linq.Dynamic/master/img/logo64x64.png</PackageIconUrl>
 		<copyright>Copyright 2008-2017 Microsoft</copyright>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
