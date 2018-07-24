@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+ xunittests:
+  image: linq-dynamic-tests
+  build:
+    context: .
+    dockerfile: tests/xUnitTests/Dockerfile
+  entrypoint: dotnet test --logger trx --results-directory /var/temp
+ 
