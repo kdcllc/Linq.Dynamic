@@ -1,5 +1,8 @@
 ﻿# System.Linq.Dynamic
-Enabled for DotNet Core and .NET 4.5
+[![Build status](https://ci.appveyor.com/api/projects/status/f09il0lx2cdw3qpf?svg=true)](https://ci.appveyor.com/project/kdcllc/linq-dynamic)
+
+Micorosft Dynamic Lynq class enabled for DotNet Core and .NET 4.5.
+
 ##Nuget
 ```
 PM> Install-Package Microsoft.Linq.Dynamic -Version 1.0.0
