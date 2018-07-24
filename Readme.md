@@ -27,5 +27,10 @@ An improvement of the original [Dynamic Linq MSDN sample](https://msdn.microsoft
 * Allow referencing the parent "it" context using "it_x" syntax.
 * Add support for "as" and "is" operators.
 
+## Docker-Compose support
+Run tests in docker by
+```
+docker-compose up
+```
 ## Special thanks to:
 [Antoine Aubry](https://github.com/aaubry/DynamicQuery/)
