@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using System.Reflection;
 
 namespace System.Linq.Dynamic
@@ -16,9 +13,17 @@ namespace System.Linq.Dynamic
 
         public static IQueryable Where(this IQueryable source, string predicate, params object[] values)
         {
-            if (source == null) throw new ArgumentNullException("source");
-            if (predicate == null) throw new ArgumentNullException("predicate");
-            LambdaExpression lambda = DynamicExpression.ParseLambda(source.ElementType, typeof(bool), predicate, values);
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            if (predicate == null)
+            {
+                throw new ArgumentNullException(nameof(predicate));
+            }
+
+            var lambda = DynamicExpression.ParseLambda(source.ElementType, typeof(bool), predicate, values);
             return source.Provider.CreateQuery(
                 Expression.Call(
                     typeof(Queryable), "Where",
@@ -35,9 +40,17 @@ namespace System.Linq.Dynamic
 
         public static IQueryable Select(this IQueryable source, string selector, params object[] values)
         {
-            if (source == null) throw new ArgumentNullException("source");
-            if (selector == null) throw new ArgumentNullException("selector");
-            LambdaExpression lambda = DynamicExpression.ParseLambda(source.ElementType, null, selector, values);
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            if (selector == null)
+            {
+                throw new ArgumentNullException(nameof(selector));
+            }
+
+            var lambda = DynamicExpression.ParseLambda(source.ElementType, null, selector, values);
             return source.Provider.CreateQuery(
                 Expression.Call(
                     typeof(Queryable), "Select",
@@ -47,7 +60,11 @@ namespace System.Linq.Dynamic
 
         public static IQueryable SelectMany(this IQueryable source)
         {
-            if (source == null) throw new ArgumentNullException("source");
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             return source.Provider.CreateQuery(
                 Expression.Call(
                 typeof(Queryable), "SelectMany",
@@ -59,7 +76,11 @@ namespace System.Linq.Dynamic
 
         public static IQueryable First(this IQueryable source)
         {
-            if (source == null) throw new ArgumentNullException("source");
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             return source.Provider.CreateQuery(
                 Expression.Call(
                 typeof(Queryable), "First",
@@ -69,7 +90,11 @@ namespace System.Linq.Dynamic
 
         public static IQueryable Distinct(this IQueryable source)
         {
-            if (source == null) throw new ArgumentNullException("source");
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             return source.Provider.CreateQuery(
                     Expression.Call(
                     typeof(Queryable), "Distinct",
@@ -79,8 +104,16 @@ namespace System.Linq.Dynamic
 
         public static IQueryable Union(this IQueryable source1, IQueryable source2)
         {
-            if (source1 == null) throw new ArgumentNullException("source1");
-            if (source2 == null) throw new ArgumentNullException("source2");
+            if (source1 == null)
+            {
+                throw new ArgumentNullException(nameof(source1));
+            }
+
+            if (source2 == null)
+            {
+                throw new ArgumentNullException(nameof(source2));
+            }
+
             return source1.Provider.CreateQuery(
                     Expression.Call(
                     typeof(Queryable), "Union",
@@ -90,8 +123,16 @@ namespace System.Linq.Dynamic
 
         public static IQueryable Concat(this IQueryable source1, IQueryable source2)
         {
-            if (source1 == null) throw new ArgumentNullException("source1");
-            if (source2 == null) throw new ArgumentNullException("source2");
+            if (source1 == null)
+            {
+                throw new ArgumentNullException(nameof(source1));
+            }
+
+            if (source2 == null)
+            {
+                throw new ArgumentNullException(nameof(source2));
+            }
+
             return source1.Provider.CreateQuery(
                  Expression.Call(
                 typeof(Queryable), "Concat",
@@ -105,11 +146,11 @@ namespace System.Linq.Dynamic
         {
             if (source == null)
             {
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
             }
             if (ordering == null)
             {
-                throw new ArgumentNullException("ordering");
+                throw new ArgumentNullException(nameof(ordering));
             }
             var parameters = new[]
             {
@@ -165,11 +206,23 @@ namespace System.Linq.Dynamic
 
         public static IQueryable GroupBy(this IQueryable source, string keySelector, string elementSelector, params object[] values)
         {
-            if (source == null) throw new ArgumentNullException("source");
-            if (keySelector == null) throw new ArgumentNullException("keySelector");
-            if (elementSelector == null) throw new ArgumentNullException("elementSelector");
-            LambdaExpression keyLambda = DynamicExpression.ParseLambda(source.ElementType, null, keySelector, values: values);
-            LambdaExpression elementLambda = DynamicExpression.ParseLambda(source.ElementType, null, elementSelector, values: values);
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            if (keySelector == null)
+            {
+                throw new ArgumentNullException(nameof(keySelector));
+            }
+
+            if (elementSelector == null)
+            {
+                throw new ArgumentNullException(nameof(elementSelector));
+            }
+
+            var keyLambda = DynamicExpression.ParseLambda(source.ElementType, null, keySelector, values: values);
+            var elementLambda = DynamicExpression.ParseLambda(source.ElementType, null, elementSelector, values: values);
             return source.Provider.CreateQuery(
                 Expression.Call(
                     typeof(Queryable), "GroupBy",
@@ -181,7 +234,11 @@ namespace System.Linq.Dynamic
         #endregion
         public static IQueryable Take(this IQueryable source, int count)
         {
-            if (source == null) throw new ArgumentNullException("source");
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             return source.Provider.CreateQuery(
                 Expression.Call(
                     typeof(Queryable), "Take",
@@ -191,7 +248,11 @@ namespace System.Linq.Dynamic
 
         public static IQueryable Skip(this IQueryable source, int count)
         {
-            if (source == null) throw new ArgumentNullException("source");
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             return source.Provider.CreateQuery(
                 Expression.Call(
                     typeof(Queryable), "Skip",
@@ -202,7 +263,11 @@ namespace System.Linq.Dynamic
 
         public static bool Any(this IQueryable source)
         {
-            if (source == null) throw new ArgumentNullException("source");
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             return (bool)source.Provider.Execute(
                 Expression.Call(
                     typeof(Queryable), "Any",
@@ -211,7 +276,11 @@ namespace System.Linq.Dynamic
 
         public static int Count(this IQueryable source)
         {
-            if (source == null) throw new ArgumentNullException("source");
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             return (int)source.Provider.Execute(
                 Expression.Call(
                     typeof(Queryable), "Count",

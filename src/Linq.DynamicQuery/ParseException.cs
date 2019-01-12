@@ -1,25 +1,30 @@
-﻿using System;
-
-namespace System.Linq.Dynamic
+﻿namespace System.Linq.Dynamic
 {
     public sealed class ParseException : Exception
     {
-        int position;
-
         public ParseException(string message, int position)
             : base(message)
         {
-            this.position = position;
+            Position = position;
         }
 
-        public int Position
-        {
-            get { return position; }
-        }
+        public int Position { get; private set; }
 
         public override string ToString()
         {
-            return string.Format(Res.ParseExceptionFormat, Message, position);
+            return string.Format(Res.ParseExceptionFormat, Message, Position);
+        }
+
+        public ParseException()
+        {
+        }
+
+        public ParseException(string message) : base(message)
+        {
+        }
+
+        public ParseException(string message, Exception innerException) : base(message, innerException)
+        {
         }
     }
 }

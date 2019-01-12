@@ -1,6 +1,6 @@
 ﻿namespace System.Linq.Dynamic
 {
-    static class Res
+    internal static class Res
     {
         public const string DuplicateIdentifier = "The identifier '{0}' was defined more than once";
         public const string ExpressionTypeMismatch = "Expression of type '{0}' expected";

@@ -7,12 +7,12 @@
 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Title>System.Linq.Dynamic Library for .NET Core</Title>
-    <PackageId>Microsoft.Linq.Dynamic</PackageId>
+    <PackageId>Linq.Dynamic</PackageId>
     <PackageTags>dynamicquery;aspnetcore;netstandard</PackageTags>
     <PackageProjectUrl>https://github.com/kdcllc/Linq.Dynamic</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/kdcllc/Linq.Dynamic</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/kdcllc/Linq.Dynamic/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicense>https://github.com/kdcllc/Linq.Dynamic/blob/master/LICENSE.md</PackageLicense>
 		<PackageIconUrl>https://raw.githubusercontent.com/kdcllc/Linq.Dynamic/master/img/logo64x64.png</PackageIconUrl>
 		<copyright>Copyright 2008-2017 Microsoft</copyright>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>

@@ -8,7 +8,7 @@ namespace System.Linq.Dynamic
         #region AdditionalAllowedTypes
         public static Expression Parse(Type resultType, string expression, ICollection<Type> additionalAllowedTypes = null, params object[] values)
         {
-            ExpressionParser parser = new ExpressionParser(null, expression, values, additionalAllowedTypes);
+            var parser = new ExpressionParser(null, expression, values, additionalAllowedTypes);
             return parser.Parse(resultType);
         }
         public static LambdaExpression ParseLambda(Type itType, Type resultType, string expression, ICollection<Type> additionalAllowedTypes = null, params object[] values)
@@ -18,7 +18,7 @@ namespace System.Linq.Dynamic
 
         public static LambdaExpression ParseLambda(ParameterExpression[] parameters, Type resultType, string expression, ICollection<Type> additionalAllowedTypes = null, params object[] values)
         {
-            ExpressionParser parser = new ExpressionParser(parameters, expression, values, additionalAllowedTypes);
+            var parser = new ExpressionParser(parameters, expression, values, additionalAllowedTypes);
             return Expression.Lambda(parser.Parse(resultType), parameters);
         }
 
@@ -30,7 +30,7 @@ namespace System.Linq.Dynamic
 
         public static Expression Parse(Type resultType, string expression, params object[] values)
         {
-            ExpressionParser parser = new ExpressionParser(null, expression, values);
+            var parser = new ExpressionParser(null, expression, values);
             return parser.Parse(resultType);
         }
 
@@ -41,7 +41,7 @@ namespace System.Linq.Dynamic
 
         public static LambdaExpression ParseLambda(ParameterExpression[] parameters, Type resultType, string expression, params object[] values)
         {
-            ExpressionParser parser = new ExpressionParser(parameters, expression, values);
+            var parser = new ExpressionParser(parameters, expression, values);
             return Expression.Lambda(parser.Parse(resultType), parameters);
         }
 

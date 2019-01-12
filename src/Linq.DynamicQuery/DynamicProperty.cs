@@ -1,28 +1,15 @@
-﻿using System;
-
-namespace System.Linq.Dynamic
+﻿namespace System.Linq.Dynamic
 {
     public class DynamicProperty
     {
-        string name;
-        Type type;
-
         public DynamicProperty(string name, Type type)
         {
-            if (name == null) throw new ArgumentNullException("name");
-            if (type == null) throw new ArgumentNullException("type");
-            this.name = name;
-            this.type = type;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            Type = type ?? throw new ArgumentNullException(nameof(type));
         }
 
-        public string Name
-        {
-            get { return name; }
-        }
+        public string Name { get; private set; }
 
-        public Type Type
-        {
-            get { return type; }
-        }
+        public Type Type { get; private set; }
     }
 }
