@@ -3,9 +3,12 @@
 
 Micorosft Dynamic Lynq class enabled for DotNet Core and .NET 4.5.
 
-## Install Previouse Version 
+## Install
 ```cmd
-    Install-Package Microsoft.Linq.Dynamic -Version 1.0.0
+    Install-Package Linq.Dynamic
+    
+    //unlisted due to Microsoft Nuget Policy
+    Install-Package Microsoft.Linq.Dynamic -Version 1.0.3
 ```
 
 [Dynamic LINQ (Part 1: Using the LINQ Dynamic Query Library) by ScottGu](https://weblogs.asp.net/scottgu/dynamic-linq-part-1-using-the-linq-dynamic-query-library)
